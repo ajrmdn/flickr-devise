@@ -1,0 +1,7 @@
+<h1>New flick</h1>
+
+<%= form_for [current_user, @flick] do |f| %>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <%= f.submit  %>
+<% end %>

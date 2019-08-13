@@ -1,0 +1,13 @@
+<h1>Flicks</h1>
+
+<% if @flicks.any? %>
+  <ul>
+    <% @flicks.each do |flick| %>
+    <li><%= link_to flick.caption, user_flick_path(current_user, flick) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no flicks yet.</p>
+<% end %>
+
+<p><%= link_to "Create new flicks", new_user_flick_path(current_user) %></p>

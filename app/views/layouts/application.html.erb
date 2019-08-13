@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <ul class="hmenu">
+      <%= render 'devise/menu/user_name' %>
+      <%= render 'devise/menu/registration_items' %>
+      <%= render 'devise/menu/login_items' %>
+      <%= flash[:notice] %>
+    </ul>
     <%= yield %>
   </body>
 </html>

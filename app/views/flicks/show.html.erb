@@ -1,0 +1,8 @@
+<h1><%= @flick.caption %></h1>
+
+<p><%= link_to "Edit", edit_user_flick_path(@flick) %></p>
+<p><%= link_to "Delete", user_flick_path(@flick),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to flicks", user_flicks_path(current_user) %></p>
