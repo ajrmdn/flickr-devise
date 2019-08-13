@@ -1,4 +1,3 @@
-require "pry"
 class FlicksController < ApplicationController
 
   def index
@@ -16,7 +15,6 @@ class FlicksController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @flick = @user.flicks.new(flick_params)
-    binding.pry
     if @flick.save!
       flash[:notice] = "Flick successfully flicked"
       redirect_to user_flicks_path(current_user)

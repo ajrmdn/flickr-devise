@@ -1,6 +1,6 @@
 <h1>Edit flick</h1>
 
-<%= form_for @flick do |f| %>
+<%= form_for [current_user, @flick] do |f| %>
   <%= f.label :caption %>
   <%= f.text_field :caption %>
   <%= f.submit  %>

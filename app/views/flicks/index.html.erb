@@ -3,11 +3,13 @@
 <% if @flicks.any? %>
   <ul>
     <% @flicks.each do |flick| %>
-    <li><%= link_to flick.caption, user_flick_path(current_user, flick) %></li>
+      <% if flick.user_id == current_user.id %>
+        <li><%= link_to flick.caption, user_flick_path(current_user, flick) %></li>
+      <% end %>
     <% end %>
   </ul>
 <% else %>
   <p>There are no flicks yet.</p>
 <% end %>
 
-<p><%= link_to "Create new flicks", new_user_flick_path(current_user) %></p>
+<p><%= link_to "Create new flicks", new_user_flick_path(current_user, @flick) %></p>
