@@ -1,6 +1,11 @@
 <h1>Flicks</h1>
 
-<% if @flicks.any? %>
+<% if !current_user %>
+  <ul>
+  <li><%= link_to('Login', new_user_session_path) %></li>
+  <li><%= link_to('Register', new_user_registration_path) %></li>
+  </ul>
+<% elsif @flicks.any? %>
   <ul>
     <% @flicks.each do |flick| %>
       <% if flick.user_id == current_user.id %>
@@ -8,8 +13,7 @@
       <% end %>
     <% end %>
   </ul>
+  <p><%= link_to "Create new flicks", new_user_flick_path(current_user, @flick) %></p>
 <% else %>
   <p>There are no flicks yet.</p>
 <% end %>
-
-<p><%= link_to "Create new flicks", new_user_flick_path(current_user, @flick) %></p>
