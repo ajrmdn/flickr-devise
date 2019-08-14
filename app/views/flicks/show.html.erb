@@ -1,5 +1,9 @@
 <h1><%= @flick.caption %></h1>
 
+<% if @flick.image.attached? %>
+  <%= image_tag(@flick.image) %>
+  <% end %>
+
 <p><%= link_to "Edit", edit_user_flick_path(@flick) %></p>
 <p><%= link_to "Delete", user_flick_path(@flick),
                          :data => {:confirm => "You sure?",

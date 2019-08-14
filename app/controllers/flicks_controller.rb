@@ -54,6 +54,6 @@ class FlicksController < ApplicationController
 
   private
     def flick_params
-      params.require(:flick).permit(:caption)
+      params.require(:flick).permit(:caption, :image)
     end
 end

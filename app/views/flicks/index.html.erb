@@ -12,8 +12,9 @@
         <li><%= link_to flick.caption, user_flick_path(current_user, flick) %></li>
       <% end %>
     <% end %>
+    <p><%= link_to "Create new flicks", new_user_flick_path(current_user, @flick) %></p>
   </ul>
-  <p><%= link_to "Create new flicks", new_user_flick_path(current_user, @flick) %></p>
 <% else %>
   <p>There are no flicks yet.</p>
+  <p><%= link_to "Create new flicks", new_user_flick_path(current_user, @flick) %></p>
 <% end %>
