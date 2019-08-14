@@ -5,8 +5,11 @@
   <% end %>
 
 <p><%= link_to "Edit", edit_user_flick_path(@flick) %></p>
-<p><%= link_to "Delete", user_flick_path(@flick),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
+
+<% if current_user.admin == true %>
+  <p><%= link_to "Delete", user_flick_path(@flick),
+                           :data => {:confirm => "You sure?",
+                                     :method => "delete"} %></p>
+<% end %>
 
 <p><%= link_to "Return to flicks", user_flicks_path(current_user) %></p>
