@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :flicks
   end
+
+  get '/revenge' => 'revenge#index'
 end
