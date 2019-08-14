@@ -45,6 +45,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'pry'
+  gem 'factory_bot'
+  gem 'simplecov', require: false
 end
 
 group :development do
